@@ -1,0 +1,33 @@
+" Format for python
+set expandtab
+autocmd FileType python setlocal textwidth=79
+set tabstop=8
+set softtabstop=4
+set shiftwidth=4
+set autoindent
+retab
+
+" Syntax coloring and colorschemes in .vim/colos
+syntax on
+set background=dark
+
+filetype plugin on
+
+set visualbell
+
+
+" set every new or read *.md buffer to use the markdown filetype
+autocmd BufNewFile,BufFilePre,BufRead,BufNew *.md set filetype=markdown
+autocmd FileType markdown setlocal syntax=off
+
+" Use of mouse
+set mouse=a
+
+" Tab navigation
+nnoremap <C-S-tab>  :tabprevious<CR>
+nnoremap <C-tab>    :tabnext<CR>
+nnoremap <C-t>      :tabnew<CR>
+
+inoremap <C-S-tab>  <Esc>:tabprevious<CR>
+inoremap <C-tab>    <Esc>:tabnext<CR>
+inoremap <C-t>      <Esc>:tabnew<CR>

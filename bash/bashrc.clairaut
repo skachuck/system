@@ -1,0 +1,4 @@
+alias matlab="matlab -noopengl"
+
+export PATH="/opt/anaconda2/bin:$PATH"
+export PYTHONPATH="$PATH"
