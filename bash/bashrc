@@ -107,8 +107,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-echo "set bell-style none" >> .inputrc
-setterm -blength 0
 
 RCEXTRA=${HOME}/.bashrc.local
 if [ -f "$RCEXTRA" ]
