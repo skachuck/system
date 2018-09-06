@@ -42,6 +42,7 @@ mirrorfiles() {
     backup "git/gitignore"      ".gitignore"
     backup "vim/vimrc"          ".vimrc"
     backup "vim/vim"            ".vim"
+    backup "mpl/matplotlib"     ".matplotlib"
 
     case $HOST in
         afallach)
@@ -49,6 +50,9 @@ mirrorfiles() {
             ;;
         clairaut)
             backup "bash/bashrc.clairaut"   ".bashrc.local"
+            ;;
+        Samuels-Macbook-Pro.local)
+            backup "bash/bashrc.mbp"        ".bashrc.local"
             ;;
         *)
             touch ${HERE}/bash/bashrc.$HOST
