@@ -118,6 +118,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
+fix_permission () {
+  sudo find $1 \( -type d -exec chmod 755 {} \; \) -o \( -type f -exec chmod 644 {} \; \) -print
+}
+
+findgrep () {
+  find $1 -type f -exec grep -nH $2 {} \;
+}
 
 RCEXTRA=${HOME}/.bashrc.local
 if [ -f "$RCEXTRA" ]
