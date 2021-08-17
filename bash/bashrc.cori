@@ -1,0 +1,40 @@
+# begin .bash_profile.ext
+[ -e $HOME/.dbgdot ] && echo "entering .bash_profile.ext" >&2
+ 
+# User additions to .bash_profile go in this file
+ 
+# Un-comment and modify the following template for system-specific 
+# personal settings.
+#
+# if [ "$NERSC_HOST" == "hopper" ]
+# then
+#   export MY_ENV_VAR="my_val"
+# fi
+
+export CRAYPE_LINK_TYPE=dynamic
+export CH_OUTPUT_INTERVAL=0
+
+
+module unload PrgEnv-intel
+module load PrgEnv-gnu
+module load cray-petsc
+module load cray-hdf5-parallel
+module load cray-netcdf-hdf5parallel
+module unload python
+#module load python/3.7-anaconda-2019.10 
+module load python
+module load cray-fftw
+
+#export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PYTHON_DIR}/lib
+
+export BISICLES_HOME=/global/homes/s/skachuck/bisicles
+export CH_TIMER=1
+export PATH="/global/homes/s/skachuck/bin:$PATH"
+
+export PETSC_DIR=/global/common/software/m1041/petsc_install_petsc_haswell_gnu
+export PETSC_ARCH=""
+
+alias sacctl='sacct --format="JobID,JobName%75,State"'
+
+[ -e $HOME/.dbgdot ] && echo "exiting .bash_profile.ext" >&2
+# end .bash_profile.ext
