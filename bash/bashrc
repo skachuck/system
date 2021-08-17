@@ -123,7 +123,13 @@ fix_permission () {
 }
 
 findgrep () {
-  find $1 -type f -exec grep -nH $2 {} \;
+  if [[ $# -eq 1 ]]; then
+    find ./ -type f -exec grep -nH $1 {} \;
+  elif [[ $# -eq 2 ]]; then
+    find $1 -type f -exec grep -nH $2 {} \;
+  else
+    echo "Illegal number of parameters" >&2
+  fi
 }
 
 RCEXTRA=${HOME}/.bashrc.local
