@@ -20,6 +20,9 @@ filetype plugin on
 
 set visualbell
 
+" Turn on line numbers
+set number
+
 
 " set every new or read *.md buffer to use the markdown filetype
 autocmd BufNewFile,BufFilePre,BufRead,BufNew *.md set filetype=markdown
