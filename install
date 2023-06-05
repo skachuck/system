@@ -45,6 +45,9 @@ mirrorfiles() {
     backup "mpl/matplotlib"     ".matplotlib"
 
     case $HOST in
+	cori*)
+	    backup "bash/bashrc.cori"       ".bashrc.local"
+	    ;;
         afallach)
             backup "bash/bashrc.afallach"   ".bashrc.local"
             ;;
