@@ -6,15 +6,26 @@ export PATH="/home/skachuck/anaconda2/bin:$PATH"
 export PATH=$PATH:/usr/lib64/openmpi/bin
 export PATH=$PATH:/usr/local/visit/bin
 export PYTHONPATH=$PATH:/home/skachuck/work/giapy
-export PYTHONPATH=$BISICLES_HOME/BISICLES/code/libamrfile/python/AMRFile:$BISICLES_HOME/BISICLES/libamrfile/python/AMRFile:$PYTHONPATH
+export PYTHONPATH=$BISICLES_HOME/BISICLESdamage-public/code/libamrfile/python/AMRFile:$PYTHONPATH
 
 if ! [ $SSH_TTY ] ; then
   export DISPLAY=localhost:0.0
 fi
 
 export PETSC_DIR=$BISICLES_HOME/petsc
-export LD_LIBRARY_PATH=/home/skachuck/anaconda2/lib:$BISICLES_HOME/BISICLES/code/libamrfile:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/home/skachuck/anaconda2/lib:$BISICLES_HOME/BISICLESdamage-public/code/libamrfile:$LD_LIBRARY_PATH
 export MATPLOTLIBRC=/home/skachuck/.matplotlib
+
+function sshcori {
+        #if [[ -z "$1" ]] ; then 
+        #  node=''
+        #else 
+        #  node=$(printf %02d $1)
+        #  echo $node
+        #fi
+        ssh -i ~/.ssh/nersc cori.nersc.gov
+}
+
 
 function sshcori {
         #if [[ -z "$1" ]] ; then 
@@ -36,5 +47,25 @@ function scpfromcori {
 }
 
 function scptocori {
+        scp -i ~/.ssh/nersc $1 skachuck@cori.nersc.gov:$2
+}
+
+
+function sshperl {
+        #if [[ -z "$1" ]] ; then 
+        #  node=''
+        #else 
+        #  node=$(printf %02d $1)
+        #  echo $node
+        #fi
+        ssh -i ~/.ssh/nersc perlmutter-p1.nersc.gov
+}
+
+
+function scpfromperl {
+        scp -i ~/.ssh/nersc skachuck@cori.nersc.gov:$1 $2
+}
+
+function scptoperl {
         scp -i ~/.ssh/nersc $1 skachuck@cori.nersc.gov:$2
 }

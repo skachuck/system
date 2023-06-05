@@ -1,10 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/skachuck/.continuum'
-let g:netrw_dirhist_2='/Users/skachuck/Documents/WorkDocuments/GIA_Modeling/ProgramRewrite/giapy/numTools'
-let g:netrw_dirhist_3='/Users/skachuck/.ssh'
-let g:netrw_dirhist_4='/Users/skachuck/Documents/WorkDocuments/GIA_Modeling/Papers/MultiDome'
-let g:netrw_dirhist_5='/Users/skachuck/Documents/WorkDocuments/ProgrammingShit/NR_python'
-let g:netrw_dirhist_6='/home/skachuck/.config/ssh'
-let g:netrw_dirhist_7='/mnt/e/SamDocuments/work/pgr/giamanifold'
-let g:netrw_dirhist_8='/home/skachuck/work/bisicles/hdf5/parallel/src/hdf5-1.8.10/config'
+let g:netrw_dirhist_cnt =0

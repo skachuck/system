@@ -29,13 +29,13 @@
 # You can also deploy your own backend outside of matplotlib by
 # referring to the module name (which must be in the PYTHONPATH) as
 # 'module://my_backend'
-#backend      : TkAgg
-backend      : Qt4Agg
+backend      : TkAgg
+#backend      : Qt4Agg
 
 # If you are using the Qt4Agg backend, you can choose here
 # to use the PyQt4 bindings or the newer PySide bindings to
 # the underlying Qt4 toolkit.
-backend.qt4 : PyQt4        # PyQt4 | PySide
+#backend.qt4 : PyQt4        # PyQt4 | PySide
 
 # Note that this can be overridden by the environment variable
 # QT_API used by Enthought Tool Suite (ETS); valid values are
@@ -211,6 +211,9 @@ mathtext.fontset : cm # Should be 'cm' (Computer Modern), 'stix',
                        # the special name "regular" for the same font
                        # used in regular text.
 
+### PCOLOR
+pcolor.shading          : auto
+
 ### AXES
 # default face and edge color, default tick sizes,
 # default fontsizes for ticklabels, and so on.  See
@@ -238,7 +241,8 @@ axes.labelsize      : large  # fontsize of the x any y labels
 #axes.unicode_minus  : True    # use unicode for the minus symbol
                                # rather than hyphen.  See
                                # http://en.wikipedia.org/wiki/Plus_and_minus_signs#Character_codes
-axes.prop_cycle    : cycler('color', ['348ABD', 'A60628', '7A68A6', '467821', 'D55E00', 'CC79A7', '56B4E9', '009E73', 'F0E442', '0072B2'])  # color cycle for plot lines
+#axes.prop_cycle    : cycler('color', ['348ABD', 'A60628', '7A68A6', '467821', 'D55E00', 'CC79A7', '56B4E9', '009E73', 'F0E442', '0072B2'])  # color cycle for plot lines
+axes.prop_cycle    : cycler('color', ['4477aa', '66ccee', '228833', 'ccbb44', 'ee6677', 'aa3377', 'bbbbbb'])
                                             # as list of string colorspecs:
                                             # single letter, long name, or
                                             # web-style hex
