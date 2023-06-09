@@ -1,1 +1,3 @@
 export PATH="/home/skachuck/anaconda3/bin:$PATH:/home/skachuck/work/pgr/giapy"
+
+export DISPLAY=localhost:0.0
