@@ -3,3 +3,5 @@
 	name = Samuel B Kachuck
 [core]
 	editor = vim
+[credential]
+	helper = store

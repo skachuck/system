@@ -1,1 +1,31 @@
 export PATH="/home/skachuck/anaconda3/bin:$PATH:/home/skachuck/work/pgr/giapy"
+
+function sshperl {
+    # Check if certificate exists
+    if [ -f ~/.ssh/nersc-cert.pub ]; then 
+        # If it does exist, check if it is expired
+        validline=`ssh-keygen -L -f ~/.ssh/nersc-cert.pub | grep Valid`
+        validtime=${validline:(-19)}
+        validsec="$(date -d $validtime +%s)"
+        currentsec="$(date +%s)"
+        if [ $currentsec -gt $validsec ]; then
+            echo "Not Valid"
+            # If it is expired, regenerate
+            ~/bin/sshproxy.sh -u skachuck
+        fi
+    else
+        # If it doesn't exist, generate
+        ~/bin/sshproxy.sh -u skachuck
+    fi
+     
+    # Now ssh
+    ssh -i ~/.ssh/nersc perlmutter-p1.nersc.gov
+}
+
+function scpfromperl {
+        scp -i ~/.ssh/nersc skachuck@cori.nersc.gov:$1 $2
+}
+
+function scptoperl {
+        scp -i ~/.ssh/nersc $1 skachuck@cori.nersc.gov:$2
+}
