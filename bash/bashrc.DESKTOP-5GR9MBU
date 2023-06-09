@@ -1,3 +1,8 @@
 export PATH="/home/skachuck/anaconda3/bin:$PATH:/home/skachuck/work/pgr/giapy"
 
 export DISPLAY=localhost:0.0
+
+
+fix_permission () {
+  sudo find $1 \( -type d -exec chmod 755 {} \; \) -o \( -type f -exec chmod 644 {} \; \) -print
+}
