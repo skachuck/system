@@ -2,3 +2,5 @@
 	email = skachuck@gmail.com
 [core]
 	editor = vim
+[credential]
+	helper = store
