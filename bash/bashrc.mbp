@@ -1,0 +1,15 @@
+
+# added by Anaconda 2.1.0 installer
+export PATH="/Users/skachuck/anaconda/bin:$PATH"
+export PYTHONPATH="/Users/skachuck/anaconda/bin"
+
+# For ogr2ogr stuff
+export PROJSO='/Users/skachuck/anaconda/lib/libproj.dylib'
+export GDAL_DATA='/Users/skachuck/anaconda/share/gdal/'
+
+# Handy aliases
+alias cdpgr='cd ~/Documents/WorkDocuments/GIA_Modeling'
+
+# Put giapy path at end...
+#export PATH="$PATH:
+export PYTHONPATH="$PYTHONPATH:/Users/skachuck/Documents/WorkDocuments/GIA_Modeling/ProgramRewrite/giapy"

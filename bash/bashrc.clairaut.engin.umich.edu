@@ -1,4 +1,11 @@
 alias matlab="matlab -noopengl"
 
-export PATH="/opt/anaconda2/bin:$PATH"
-export PYTHONPATH="$PATH"
+export PATH="/home/skachuck/anaconda2/bin:$PATH"
+export PATH=$PATH:/usr/lib64/openmpi/bin
+export PATH=$PATH:/usr/local/visit/bin
+export PYTHONPATH=$PATH:/home/skachuck/work/giapy
+export PYTHONPATH=$BISICLES_HOME/BISICLES/code/libamrfile/python/AMRFile:$PYTHONPATH
+
+export BISICLES_HOME=/home/skachuck/work/bisicles
+export PETSC_DIR=$BISICLES_HOME/petsc
+export LD_LIBRARY_PATH=/home/skachuck/anaconda2/lib:$BISICLES_HOME/BISICLES/code/libamrfile:$LD_LIBRARY_PATH
